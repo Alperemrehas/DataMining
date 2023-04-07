@@ -1,0 +1,29 @@
+In the implemnation we analyz the pruning through candiate generation
+
+The pseudocode for the candidate generation step of Apriori algorithm is as follows:
+
+Given a set of k-item frequent itemsets I as input
+(Note that k>1 and items within itemsets and also itemsets are already sorted in increasing order).
+C is the set of k-item Candidate Itemsets, initially empty
+For each itemset i in I
+  For each itemset j in I
+    If the initial k-1 elements of itemset i and j are the same,
+        create a k+1-item candidate itemset c 
+        If c does not include any k-item non-frequent itemset 
+        C = C U c
+Output C
+
+Example:
+Input {a,b}, {a,c}, {a,d}, {b,c}, {c,d}, {c,e}, {d,e}
+Output should be {a,b,c}, {a,c,d},{c,d,e}
+
+Note that {a,b} and {a,d} can be joined, as their initial k elements are the same, to form the candidate {a,b,d}. 
+However it includes the {b,d} as a subset, which is a non-frequent 2-item itemset.
+
+We implemented in the Apriori_Algorithm.py file:
+1. The candidate generation algorithm above
+2. Candidate generation algorithm by extending each k-item frequent itemset by an item in the data set
+
+We expect to obtain pruning in candidates in the first algorithm. In order to analyze this we run both of the algorithms on 50 randomly created k-item frequent itemsets 
+
+Note same was used as input for both of the algorithms.
