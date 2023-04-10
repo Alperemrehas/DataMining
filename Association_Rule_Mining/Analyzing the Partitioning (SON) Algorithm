@@ -1,0 +1,8 @@
+SON algorithm partitions the transaction data set into chunks fitting in the memory and returns the complete result in two passes on the data.
+
+In here we have used:
+1. Sample grocery dataset
+2. Run apriori function under mlxtend library in Python on  data set with 0.02 support ratio
+3. For i in 5 to 10
+  a. Partition groceries.csv data set into i partitions
+  b. Find the total number of frequent itemsets generated for all the partitions
